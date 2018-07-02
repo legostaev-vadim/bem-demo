@@ -1,0 +1,120 @@
+/* fonts
+-------------------------------- */
+@font-face
+{
+    font-family: 'Roboto-Regular';
+    font-weight: normal;
+    font-style: normal; 
+
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2'), url('../fonts/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'Roboto-Bold';
+    font-weight: bold;
+    font-style: normal; 
+
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'), url('../fonts/Roboto-Bold.woff') format('woff'), url('../fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'Roboto-Light';
+    font-weight: 300;
+    font-style: normal; 
+
+    src: url('../fonts/Roboto-Light.woff2') format('woff2'), url('../fonts/Roboto-Light.woff') format('woff'), url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+/* base
+-------------------------------- */
+*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:active,
+a:focus,
+button:active,
+button:focus,
+input:active,
+input:focus,
+[type='submit']:active,
+[type='submit']:focus
+{
+    outline: none;
+}
+
+.page
+{
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+
+    height: 10000px; 
+
+    color: #222;
+}
+
+[class*=wrapper]
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* button-up
+-------------------------------- */
+.button-up
+{
+    position: fixed;
+    z-index: 9999;
+    right: 12px;
+    bottom: -50px;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+
+    opacity: .6;
+    border: none;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    background-color: #222;
+}
+.button-up::before
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -6px;
+    margin-left: -8px;
+
+    content: '';
+
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom: 12px solid #fff;
+}
+.button-up:hover
+{
+    opacity: .9;
+}
+.button-up--show
+{
+    bottom: 12px;
+}
+
+/* header
+-------------------------------- */
+.header
+{
+    color: red;
+}

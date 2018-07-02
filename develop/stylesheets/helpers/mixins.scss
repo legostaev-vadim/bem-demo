@@ -1,0 +1,17 @@
+@mixin min($scr) {
+    @media (min-width: #{$scr}px) {
+        @content;
+    }
+}
+
+@mixin max($scr) {
+    @media (max-width: #{$scr}px) {
+        @content;
+    }
+}
+
+@mixin ret() {
+    @media (min-resolution: 1.5dppx) {
+        @content;
+    }
+}

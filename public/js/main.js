@@ -1,0 +1,23 @@
+'use strict';
+
+/* button-up
+-------------------------------- */
+(function(window) {
+
+    var $ = window.jQuery,
+        $buttonUp = $('.button-up');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 150) {
+            $buttonUp.addClass('button-up--show');
+        } else {
+            $buttonUp.removeClass('button-up--show');
+        }
+    });
+
+    $buttonUp.on('click', function() {
+        $('html, body').stop().animate({
+            scrollTop: 0
+        }, 600);
+    });
+})(window);

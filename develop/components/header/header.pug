@@ -1,0 +1,5 @@
+mixin header(mix, ...mods)
+    - if (mix) mix += '__header'; mods = mods.map(e => `header--${e}`)
+    header.header(class = [mix, mods])
+        ._wrapper
+            h1._title Привет, Мир!
