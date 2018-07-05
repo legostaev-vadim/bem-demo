@@ -27,7 +27,7 @@
     src: url('../fonts/Roboto-Light.woff2') format('woff2'), url('../fonts/Roboto-Light.woff') format('woff'), url('../fonts/Roboto-Light.ttf') format('truetype');
 }
 
-/* base
+/* custom
 -------------------------------- */
 *
 {
@@ -52,8 +52,6 @@ input:focus,
 .page
 {
     font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
-
-    height: 10000px; 
 
     color: #222;
 }
@@ -82,7 +80,7 @@ input:focus,
          -o-transition: all .3s;
             transition: all .3s;
 
-    opacity: .6;
+    opacity: .8;
     border: none;
     -webkit-border-radius: 3px;
             border-radius: 3px;
@@ -116,5 +114,114 @@ input:focus,
 -------------------------------- */
 .header
 {
+    padding-top: 70px;
+}
+.header--align
+{
+    text-align: center;
+}
+.header--color
+{
     color: red;
+}
+.header__title
+{
+    font-size: 28px;
+}
+.header__image
+{
+    width: 100%;
+}
+@media (min-width: 768px)
+{
+    .header__title
+    {
+        font-size: 34px;
+    }
+}
+
+/* logo
+-------------------------------- */
+.logo
+{
+    font-family: Roboto-Bold;
+    font-size: 18px;
+
+    padding: 10px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: yellow;
+}
+
+/* menu
+-------------------------------- */
+.menu
+{
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    background-color: aqua;
+}
+.menu__wrapper
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-direction: column; 
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+}
+.menu__button
+{
+    display: none;
+}
+.menu__item
+{
+    font-size: 18px;
+
+    padding: 10px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu__item:hover
+{
+    opacity: .5;
+}
+@media (min-width: 768px)
+{
+    .menu
+    {
+        height: 50px;
+    }
+    .menu__wrapper
+    {
+                flex-direction: row;
+
+        height: 100%;
+
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+                align-items: center;
+    }
+    .menu .menu__logo
+    {
+        margin-right: auto;
+    }
 }

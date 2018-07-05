@@ -1,0 +1,13 @@
+mixin menu(data, mix, ...mods)
+    - if (mix) mix += '__menu'
+    - mods = mods.map(e => `menu--${e}`)
+    
+    nav.menu(class = [mix, mods])
+        ._wrapper
+            +logo({text: 'brand'}, 'menu')
+            button._button
+            a(href="#")._item.-active= 'Home'
+            a(href="#")._item= 'About'
+            a(href="#")._item= 'Gallery'
+            a(href="#")._item= 'Blog'
+            a(href="#")._item= 'Contacts'

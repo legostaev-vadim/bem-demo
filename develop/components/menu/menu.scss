@@ -1,0 +1,41 @@
+/* menu
+-------------------------------- */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 100000;
+    background-color: aqua;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__button {
+        display: none;
+    }
+
+    &__item {
+        padding: 10px;
+        font-size: 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    @include min($md) {
+        height: 50px;
+        &__wrapper {
+            height: 100%;
+            flex-direction: row;
+            align-items: center;
+        }
+        & &__logo {
+            margin-right: auto;
+        }
+    }
+}

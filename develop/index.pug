@@ -3,7 +3,11 @@ html(lang="ru")
     +head
     body.page
         main.main
-            +header
+            +menu
+            +header({
+                text: 'Hello, World!',
+                src: 'img/header/bg.jpg'
+                }, 'main', 'align', 'color')
 
         +button-up
         +script

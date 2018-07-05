@@ -1,0 +1,5 @@
+mixin logo(data, mix, ...mods)
+    - if (mix) mix += '__logo'
+    - mods = mods.map(e => `logo--${e}`)
+    
+    a.logo(href="#" class = [mix, mods])= data.text || 'logo'
