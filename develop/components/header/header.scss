@@ -1,27 +1,6 @@
 /* header
 -------------------------------- */
-.header {
-    padding-top: 70px;
-
-    &--align {
-        text-align: center;
-    }
-
-    &--color {
-        color: red;
-    }
-
-    &__title {
-        font-size: 28px;
-    }
-
-    &__image {
-        width: 100%;
-    }
-
-    @include min($md) {
-        &__title {
-            font-size: 34px;
-        }
-    }
-}
+// .header {
+//     padding-top: 50px;
+//     font-size: 18px;
+// }

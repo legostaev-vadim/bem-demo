@@ -1,5 +1,2 @@
-mixin button-up(data, mix, ...mods)
-    - if (mix) mix += '__button-up'
-    - mods = mods.map(e => `button-up--${e}`)
-    
-    button.button-up(class = [mix, mods])
+mixin button-up(mix)
+    button.button-up(class=mix)

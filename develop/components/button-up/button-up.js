@@ -1,9 +1,8 @@
 /* button-up
 -------------------------------- */
-(function(window) {
+(function($) {
     
-    const $ = window.jQuery,
-        $buttonUp = $('.button-up');
+    const $buttonUp = $('.button-up');
     
     $(window).scroll(function() {
         if ($(window).scrollTop() > 150) {
@@ -17,4 +16,4 @@
         $('html, body').stop().animate({scrollTop : 0}, 600);
     });
     
-})(window);
+})(jQuery);

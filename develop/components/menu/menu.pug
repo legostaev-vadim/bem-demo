@@ -1,13 +1,16 @@
-mixin menu(data, mix, ...mods)
-    - if (mix) mix += '__menu'
-    - mods = mods.map(e => `menu--${e}`)
-    
-    nav.menu(class = [mix, mods])
+mixin menu(mix)
+    nav.menu(class=mix)
         ._wrapper
-            +logo({text: 'brand'}, 'menu')
             button._button
-            a(href="#")._item.-active= 'Home'
-            a(href="#")._item= 'About'
-            a(href="#")._item= 'Gallery'
-            a(href="#")._item= 'Blog'
-            a(href="#")._item= 'Contacts'
+            +logo('menu__logo')
+            +cart('menu__cart')
+            +search('menu__search')
+            ._list
+                a(href="#")._item= 'Home'
+                a(href="#")._item= 'About Us'
+                a(href="#")._item= 'Portfolio'
+                a(href="#")._item= 'Features'
+                a(href="#")._item= 'Blog'
+                a(href="#")._item= 'Pricing'
+                a(href="#")._item.-active= 'Shortcodes'
+                a(href="#")._item= 'Contact'

@@ -1,10 +1,19 @@
 /* logo
 -------------------------------- */
 .logo {
-    padding: 10px;
-    font-family: $fb;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    text-transform: uppercase;
-    color: yellow;
+    font-family: $font-primary-regular;
+    font-size: 30px;
+    color: $color-primary-light;
+    
+    &__symbol {
+        height: 24px;
+        fill: $color-primary-light;
+    }
+
+    &__text {
+        margin: 0;
+    }
 }

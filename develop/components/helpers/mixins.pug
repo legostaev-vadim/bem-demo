@@ -15,9 +15,10 @@ mixin title(pageName)
         title= `${pageName} | ${siteName}`
     else
         title= siteName
-
+        
 mixin script
     script(src='libs/jquery-3.3.1.min.js')
+    script(src='libs/svg4everybody.min.js')
     <!--build:js js/main.min.js-->
     script(src='js/main.js')
     <!--endbuild-->

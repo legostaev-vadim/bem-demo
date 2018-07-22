@@ -1,8 +1,3 @@
-mixin header(data, mix, ...mods)
-    - if (mix) mix += '__header'
-    - mods = mods.map(e => `header--${e}`)
-    
-    header.header(class = [mix, mods])
+mixin header(mix)
+    header.header(class=mix)
         ._wrapper
-            h1._title= data.text
-            img._image(src=data.src, alt="")
