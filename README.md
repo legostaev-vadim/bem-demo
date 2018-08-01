@@ -1,6 +1,6 @@
-# project
+# demo
 
-**BEM**-project
+**BEM-COMPS**-project
 
 # Install
 
