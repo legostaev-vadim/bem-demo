@@ -1,4 +1,4 @@
-# demo
+# bem-demo
 
 **bem-comps** demo
 
