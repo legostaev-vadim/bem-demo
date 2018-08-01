@@ -1,0 +1,12 @@
+mixin present(mix)
+    section.present(class=mix)
+        ._wrapper
+            button._button.wow.rotateIn(data-wow-offset="150")
+                +symbol('present__play present__play--show', 'play', '0 0 80 76')
+                +symbol('present__pause', 'pause', '0 0 80 76')
+            h2._title.wow.slideInUp Waxom Video Presentation
+            h3._subtitle.wow.slideInUp Investigationes demonstraverunt lectores legere me lius quod ii legunt<br> saepius, qui sequitur mutationem consuetudium.
+            time._time.wow.slideInUp 00:00
+            video._video(preload="metadata" playsinline loop muted)
+                source(src="mov/present/WebDesign.webm" type="video/webm")
+                source(src="mov/present/WebDesign.mp4" type="video/mp4")

@@ -6,7 +6,8 @@ let gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     csscomb = require('gulp-csscomb'),
     remember = require('gulp-remember'),
-    through2 = require('through2').obj,
+    flatmap = require('gulp-flatmap'),
+    merge2 = require('merge2'),
     order = require('gulp-order'),
     babel = require('gulp-babel'),
     uglify = require('gulp-uglify'),
@@ -17,36 +18,25 @@ let gulp = require('gulp'),
     useref = require('gulp-useref'),
     multipipe = require('multipipe'),
     svgSprite = require('gulp-svg-sprites'),
-    imagemin = require('gulp-imagemin'),
+    path = require('path'),
     del = require('del'),
-    production = false,
-    tagcontents;
+    production = false;
 
-
-gulp.task('tags', () => {
-    return gulp.src('develop/components/**/*.pug', {since: gulp.lastRun('tags')})
-        .pipe(remember('tags'))
-        .pipe(order([
-            'helpers/variables.pug',
-            'helpers/mixins.pug'
-        ]))
-        .pipe(concat('.'))
-        .pipe(through2(function (file, enc, cb) {
-            tagcontents = file.contents;
-            cb();
-        }));
-});
 
 gulp.task('pages', () => {
-    return gulp.src('develop/*.pug')
-        .pipe(through2(function (file, enc, cb) {
-            file.contents = Buffer.concat([tagcontents, Buffer.from('\n'), file.contents]);
-            cb(null, file);
+    return gulp.src('develop/*.pug', {since: gulp.lastRun('pages')})
+        .pipe(remember('pages'))
+        .pipe(flatmap(function(stream, file){
+            return merge2(
+                gulp.src('develop/components/**/*.pug', {since: gulp.lastRun('pages')})
+                    .pipe(remember('comps'))
+                , stream)
+                .pipe(concat(file.basename));
         }))
         .pipe(pug({pretty: true, plugins: [pugbem]}))
         .pipe(gulp.dest('public'))
         .pipe(gulpIf(production, multipipe(
-            beautifyCode({extra_liners: ['head','body','main','header','nav','section','article','aside','footer','/footer','/main','/html']}),
+            beautifyCode({extra_liners: ['head','body','main','header','nav','section','article','aside','footer','/main','/html']}),
             useref(),
             gulpIf('*.css', cleanCSS()),
             gulpIf('*.js', uglify()),
@@ -86,6 +76,18 @@ gulp.task('scripts', () => {
         .pipe(gulp.dest('public/js'));
 });
 
+gulp.task('symbols', function () {
+    return gulp.src('develop/symbols/**/*.svg')
+        .pipe(svgSprite({
+            mode: 'symbols',
+            preview: false,
+            svg: {
+                symbols: 'symbols.svg'
+            }
+        }))
+        .pipe(gulp.dest('public/img'));
+});
+
 gulp.task('serve', (done) => {
     browserSync.init({
         server: {
@@ -105,40 +107,61 @@ gulp.task('clean', () => {
     return del('public');
 });
 
-gulp.task('copy', (done) => {
-    gulp.src('develop/favicon.ico').pipe(gulp.dest('public'));
-    gulp.src('develop/fonts/**/*').pipe(gulp.dest('public/fonts'));
-    gulp.src('develop/images/**/*{jpeg,jpg,png,gif}')
-        // .pipe(gulpIf(production, imagemin()))
-        .pipe(gulp.dest('public/img'));
-    gulp.src('develop/movies/**/*').pipe(gulp.dest('public/mov'));
-    gulp.src('develop/libraries/**/*').pipe(gulp.dest('public/libs'));
-    done();
-});
-
-gulp.task('symbols', function () {
-    return gulp.src('develop/images/**/*.svg')
-        .pipe(svgSprite({
-            mode: 'symbols',
-            preview: false,
-            svg: {
-                symbols: 'icons.svg'
-            }
-        }))
-        .pipe(gulp.dest('public/img'));
-});
-
 gulp.task('publish', (done) => {
     production = true;
     done();
 });
 
-gulp.task('watch', () => {
-    gulp.watch('develop/components/**/*.pug', gulp.series('tags', 'pages', 'reload'));
-    gulp.watch('develop/*.pug', gulp.series('pages', 'reload'));
-    gulp.watch('develop/components/**/*.scss', gulp.series('styles', 'reload'));
-    gulp.watch('develop/components/**/*.js', gulp.series('scripts', 'reload'));
+gulp.task('copy:favicon', (done) => {
+    gulp.src('develop/favicon.ico').pipe(gulp.dest('public'));
+    done();
+});
+gulp.task('copy:fonts', (done) => {
+    gulp.src('develop/fonts/**/*').pipe(gulp.dest('public/fonts'));
+    done();
+});
+gulp.task('copy:images', (done) => {
+    gulp.src('develop/images/**/*').pipe(gulp.dest('public/img'));
+    done();
+});
+gulp.task('copy:movies', (done) => {
+    gulp.src('develop/movies/**/*').pipe(gulp.dest('public/mov'));
+    done();
+});
+gulp.task('copy:libraries', (done) => {
+    gulp.src('develop/libraries/**/*').pipe(gulp.dest('public/libs'));
+    done();
+});
+gulp.task('copy:ajax', (done) => {
+    gulp.src('develop/ajax/**/*').pipe(gulp.dest('public/ajax'));
+    done();
 });
 
-gulp.task('default', gulp.series('clean', 'styles', 'scripts', 'tags', 'pages', 'copy', 'symbols', 'serve', 'watch'));
+gulp.task('watch', () => {
+    gulp.watch('develop/*.pug', gulp.series('pages', 'reload'))
+        .on('unlink', function(filepath) {
+            remember.forget('pages', path.resolve(filepath));
+        });
+    gulp.watch('develop/components/**/*.pug', gulp.series('pages', 'reload'))
+        .on('unlink', function(filepath) {
+            remember.forget('comps', path.resolve(filepath));
+        });
+    gulp.watch('develop/components/**/*.scss', gulp.series('styles', 'reload'))
+        .on('unlink', function(filepath) {
+            remember.forget('styles', path.resolve(filepath));
+        });
+    gulp.watch('develop/components/**/*.js', gulp.series('scripts', 'reload'))
+        .on('unlink', function(filepath) {
+            remember.forget('scripts', path.resolve(filepath));
+        });
+    gulp.watch('develop/favicon.ico', gulp.series('copy:favicon', 'reload'));
+    gulp.watch('develop/fonts/**/*', gulp.series('copy:fonts', 'reload'));
+    gulp.watch('develop/images/**/*', gulp.series('copy:images', 'reload'));
+    gulp.watch('develop/movies/**/*', gulp.series('copy:movies', 'reload'));
+    gulp.watch('develop/libraries/**/*', gulp.series('copy:libraries', 'reload'));
+    gulp.watch('develop/ajax/**/*', gulp.series('copy:ajax', 'reload'));
+});
+
+gulp.task('copy', gulp.series('copy:favicon', 'copy:fonts', 'copy:images', 'copy:movies', 'copy:libraries', 'copy:ajax'));
+gulp.task('default', gulp.series('clean', 'styles', 'scripts', 'pages', 'copy', 'symbols', 'serve', 'watch'));
 gulp.task('build', gulp.series('publish', 'default'));

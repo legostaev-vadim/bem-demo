@@ -1,0 +1,20 @@
+/* button
+-------------------------------- */
+.button {
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $font-primary-bold;
+    font-size: 14px;
+    color: $text-secondary-color;
+    padding: 17px 27px;
+    background: $color-primary-middle;
+    border-bottom: 2px solid $color-secondary-dark;
+    border-radius: $radius;
+    transition: all $duration;
+    &:hover {
+        color: $color-primary-hover;
+        background: $text-secondary-color;
+    }
+}

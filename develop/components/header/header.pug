@@ -1,3 +1,35 @@
 mixin header(mix)
     header.header(class=mix)
-        ._wrapper
+        ._slider
+            ._item.-background_01
+                ._wrapper
+                    h1._title Unique and Modern Design
+                    h2._subtitle Portfolio PSD Template
+                    p._text Nam liber tempor cum soluta nobis eleifend option congue nihil imper<br> diet doming id quod mazim placerat facer possim assum.
+                    +button('header__button', 'Get Started')
+            ._item.-background_02
+                ._wrapper
+                    h1._title Maecenas tempus Tellus
+                    h2._subtitle Aenean Eleifend tellus
+                    p._text Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo ligula eget dolor.<br> Cum sociis natoque penatibus et magnis.
+                    +button('header__button', 'Get Started')
+            ._item.-background_03
+                ._wrapper
+                    h1._title Fusce vulputate Eleifend
+                    h2._subtitle Curabitur ligula Sapien
+                    p._text Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus<br> orci luctus et ultrices posuere cubilia curae.
+                    +button('header__button', 'Get Started')
+            ._item.-background_04
+                ._wrapper
+                    h1._title Aenean vulputate Eleifend
+                    h2._subtitle Phasellus eget Cursus
+                    p._text Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing.<br> Phasellus ullamcorper ipsum rutrum nunc.
+                    +button('header__button', 'Get Started')
+            ._item.-background_05
+                ._wrapper
+                    h1._title Integer ante nunc Accumsan
+                    h2._subtitle Donec mollis Hendrerit
+                    p._text Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula<br> sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+                    +button('header__button', 'Get Started')
+        +symbol('header__arrow header__arrow--prev', 'big-arrow', '0 0 42 75')
+        +symbol('header__arrow header__arrow--next', 'big-arrow', '0 0 42 75')

@@ -1,0 +1,18 @@
+/* widget
+-------------------------------- */
+.widget {
+    margin: 0;
+    font-size: 0;
+
+    &__link {
+        display: inline-block;
+        transition: opacity $duration;
+        &:hover {
+            opacity: .6;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}

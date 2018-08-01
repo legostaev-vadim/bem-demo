@@ -1,6 +1,229 @@
 /* header
 -------------------------------- */
-// .header {
-//     padding-top: 50px;
-//     font-size: 18px;
-// }
+.header {
+    position: relative;
+    
+    &__item {
+        outline: none;
+        text-align: center;
+        color: $text-secondary-color;
+        &--background_01 {
+            background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                url('../img/header/001-m.jpg') no-repeat;
+            background-size: cover;
+        }
+        &--background_02 {
+            background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                url('../img/header/002-m.jpg') no-repeat;
+            background-size: cover;
+        }
+        &--background_03 {
+            background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                url('../img/header/003-m.jpg') no-repeat;
+            background-size: cover;
+        }
+        &--background_04 {
+            background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                url('../img/header/004-m.jpg') no-repeat;
+            background-size: cover;
+        }
+        &--background_05 {
+            background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                url('../img/header/005-m.jpg') no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 560px;
+        margin: 0;
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+    
+    &__title {
+        margin: 0;
+        margin-top: auto;
+        font-family: $font-primary-medium;
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-top: 5px;
+        font-family: $font-primary-bold;    
+        font-size: 40px;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+
+    &__text {
+        margin: 0;
+        margin-top: 15px;
+        font-family: $font-primary-medium;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5em;
+        letter-spacing: .5px;
+        br {
+            display: none;
+        }
+    }
+
+    & &__button {
+        margin: 0 auto;
+        margin-top: 46px;
+        margin-bottom: auto;
+        padding: 19px 39px;
+    }
+
+    .slick-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            width: 17px;
+            height: 17px;
+            margin: 0 8px;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+        .slick-active {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border: 2px solid #fff;
+            opacity: 1;
+        }
+        button {
+            display: none;
+        }
+    }
+
+    &__arrow {
+        display: none;
+    }
+
+    @include min($screen-sm) {
+        &__wrapper {
+            min-height: 625px;
+            margin: 0 5%;
+        }
+        &__title {
+            font-size: 30px;
+        }
+        &__subtitle {  
+            font-size: 45px;
+        }
+        .slick-dots {
+            bottom: 41px;
+        }
+    }
+
+    @include min($screen-md) {
+        &__item {
+            &--background_01 {
+                background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                    url('../img/header/001.jpg') no-repeat;
+                background-size: cover;
+            }
+            &--background_02 {
+                background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                    url('../img/header/002.jpg') no-repeat;
+                background-size: cover;
+            }
+            &--background_03 {
+                background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                    url('../img/header/003.jpg') no-repeat;
+                background-size: cover;
+            }
+            &--background_04 {
+                background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                    url('../img/header/004.jpg') no-repeat;
+                background-size: cover;
+            }
+            &--background_05 {
+                background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)),
+                    url('../img/header/005.jpg') no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    @include min($screen-lg) {
+        &__wrapper {
+            min-height: 825px;
+            margin: 0 12%;
+        }
+        &__title {
+            font-size: 36px;
+        }
+        &__subtitle {  
+            font-size: 51px;
+        }
+        &__text {
+            br {
+                display: inline;
+            }
+        }
+        &__arrow {
+            display: block;
+            position: absolute;
+            top: 46.2%;
+            z-index: 100;
+            height: 55px;
+            cursor: pointer;
+            fill: $color-primary-light;
+            transition: opacity $duration;
+            &:hover {
+                opacity: 0.5;
+            }
+            &--prev {
+                left: 4.2%;
+                transform: scaleX(-1);
+            }
+            &--next {
+                right: 4.2%;
+            }
+        }
+    }
+
+    @include min($screen-xl) {
+        &__wrapper {
+            min-height: 1025px;
+            margin: 0 18%;
+        }
+        .slick-dots {
+            li {
+                width: 11px;
+                height: 11px;
+                margin: 0 5px;
+            }
+            .slick-active {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        &__arrow {
+            height: 75px;
+            &--prev {
+                left: 9.7%;
+            }
+            &--next {
+                right: 9.7%;
+            }
+        }
+    }
+}

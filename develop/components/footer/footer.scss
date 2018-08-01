@@ -1,0 +1,213 @@
+/* footer
+-------------------------------- */
+.footer {
+    
+    &__main {
+        padding-top: 75px;
+        padding-bottom: 63px;
+        background: #191919;
+    }
+
+    &__wrapper {
+        &--main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        max-width: 280px;
+        min-width: 200px;
+        margin: 0 3%;
+    }
+
+    & &__logo {
+        margin-bottom: 22px;
+        font-size: 34px;
+        .logo__icon {
+            height: 59px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        font-family: $font-primary-medium;
+        font-size: 24px;
+        color: $text-secondary-color;
+    }
+
+    &__post {
+        text-decoration: none;
+        &:hover {
+            .footer__text {
+                color: $text-primary-accent;
+            }
+            .footer__time {
+                color: $text-secondary-color;
+            }
+        }
+    }
+
+    &__time {
+        display: block;       
+        font-family: $font-primary-medium;
+        font-size: 12px;
+        color: rgb(54,54,54);
+        transition: color $duration;
+    }
+
+    &__text {
+        margin: 0;
+        margin-bottom: 10px;
+        font-family: $font-primary-medium;
+        font-size: 14px;
+        line-height: 1.6em;
+        color: $head-primary-color;
+        transition: color $duration;
+        &--line {
+            line-height: 1.75em;
+        }
+        &--border {
+            padding-bottom: 19px;
+            border-bottom: 2px solid rgb(37,37,37);
+        }
+    }
+
+    &__select {
+        color: $color-primary-active;
+        background: transparent;
+        &--light {
+            color: #959595;
+        }
+    }
+
+    &__more {
+        display: inline-block;
+        margin-top: 13px;
+        text-decoration: none;
+        font-family: $font-secondary-bold;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        color: $text-secondary-color;
+        transition: color $duration;
+        &:hover {
+            color: $color-primary-active;
+            &::after {
+                border-left-color: $color-primary-active;
+            }
+        }
+        &::after {
+            content: '';
+            display: inline-block;
+            margin-left: 10px;
+            border: 4px solid transparent;
+            border-right: none;
+            border-left: 5px solid $text-primary-accent;
+            transition: border-left-color $duration;
+        }
+    }
+
+    & &__widget {
+        margin-top: 26px;
+        .widget__link {
+            width: calc(50% - 3px);
+            max-width: 133px;
+            margin-bottom: 6px;
+            &:nth-of-type(odd) {
+                margin-right: 6px;
+            }
+        }
+    }
+
+    &__bottom {
+        background: #111111;
+    }
+
+    &__wrapper {
+        &--bottom {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-top: 31px;
+            padding-bottom: 35px;
+        }
+    }
+
+    &__left {
+        margin: 10px 0;
+        margin-right: auto;
+        padding-right: 6%;
+    }
+
+    &__right {
+        margin: 10px 0;
+    }
+
+    &__copy {
+        display: inline-block;
+        margin: 7px 10px;
+        font-family: $font-primary-medium;
+        font-size: 13px;
+        color: $head-primary-color;
+        letter-spacing: .5px;
+        span {
+            color: #959595;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        margin: 7px 10px;
+        text-decoration: none;
+        font-family: $font-primary-medium;
+        font-size: 13px;
+        white-space: nowrap;
+        color: $head-primary-color;
+        letter-spacing: .3px;
+        transition: color $duration;
+        &:hover {
+            color: $text-secondary-color;
+            span {
+                color: $text-secondary-color;
+            }
+        }
+        span {
+            color: #959595;
+            transition: color $duration;
+        }
+    }
+
+    @include min($screen-sm) {
+        &__item {
+            max-width: 40%;
+        }
+    }
+
+    @include min($screen-md) {
+        &__item {
+            max-width: 36%;
+        }
+    }
+
+    @include min($screen-lg) {
+        &__wrapper {
+            &--main {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+        }
+        &__item {
+            max-width: 23.2%;
+            margin: 0;
+        }
+        &__wrapper {
+            &--bottom {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+}

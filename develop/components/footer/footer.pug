@@ -1,0 +1,55 @@
+mixin footer(mix)
+    footer.footer(class=mix)
+        ._main
+            ._wrapper.-main
+                ._item
+                    +logo('footer__logo')
+                    p._text.-line Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.
+                    a._more(href="#") Read More
+                ._item
+                    h2._title Recent Posts
+                    a(href="#")._post
+                        p._text.-border
+                            span._time September 08, 2015
+                            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                    a(href="#")._post
+                        p._text.-border
+                            span._time September 08, 2015
+                            | Diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                    a(href="#")._post
+                        p._text
+                            span._time September 08, 2015
+                            | Claritas est etiam processus dynamicus, qui sequitur mutationem per seacula quarta decima
+                ._item
+                    h2._title Our Twitter
+                    a(href="#")._post
+                        p._text.-border
+                            mark._select @waxom 
+                            | Cum soluta nobis eleifend option congue nihil imperdiet doming
+                            span._time 3 mins ago
+                    a(href="#")._post
+                        p._text.-border Mirum est 
+                            mark._select #envato 
+                            | notare quam littera gothica, quam nunc putamus parum anteposuerit litterarum
+                            span._time 3 mins ago
+                    a(href="#")._post
+                        p._text Soluta nobis option 
+                            mark._select.-light bit.ly/1Hniso7
+                            span._time 20 days ago
+                ._item
+                    h2._title Dribbble Widget
+                    +widget('footer__widget')
+        ._bottom
+            ._wrapper.-bottom
+                ._left
+                    span._copy Copyright © 2015 <span>Waxom</span>
+                    ||
+                    a._link(href="#") Privacy Policy
+                    ||
+                    a._link(href="#") FAQ
+                    ||
+                    a._link(href="#") Support
+                ._right
+                    a._link(href="#") Designed by <span>ThemeFire</span>
+                    ||
+                    a._link(href="#") Only on <span>Envato Market</span>

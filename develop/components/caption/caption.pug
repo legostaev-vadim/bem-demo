@@ -1,0 +1,4 @@
+mixin caption(mix, title, subtitle)
+    .caption.wow.zoomIn(class=mix data-wow-offset="150")
+        h2._title!= title || 'Title'
+        h3._subtitle!= subtitle || 'Subtitle'

@@ -1,0 +1,46 @@
+/* caption
+-------------------------------- */
+.caption {
+    text-align: center;
+    &--padding {
+        padding: 0 15px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $font-secondary-bold;
+        font-size: 28px;
+        font-weight: normal;
+        color: $head-primary-color;
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-top: 15px;
+        font-family: $font-primary-light;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.7em;
+        color: $text-primary-color;
+        br {
+            display: none;
+        }
+    }
+
+    @include min($screen-sm) {
+        &__title {
+            font-size: 30px;
+        }
+    }
+
+    @include min($screen-lg) {
+        &--padding {
+            padding: 0 30px;
+        }
+        &__subtitle {
+            br {
+                display: inline;
+            }
+        }
+    }
+}

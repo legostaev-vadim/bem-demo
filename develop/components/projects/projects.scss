@@ -1,0 +1,23 @@
+/* projects
+-------------------------------- */
+.projects {
+    padding-top: 77px;
+    padding-bottom: 79px;
+    text-align: center;
+
+    &__wrapper {
+        padding: 0;
+    }
+    
+    & &__toolbar {
+        margin-top: 36px;
+    }
+
+    & &__button {
+        min-width: 168px;
+        margin-top: 12px;
+        &:hover {
+            box-shadow: 0 0 2px $color-secondary-light;
+        }
+    }
+}

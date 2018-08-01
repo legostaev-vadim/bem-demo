@@ -6,6 +6,9 @@ mixin head(pageName)
         link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
         +title(pageName)
         link(rel="stylesheet" href='libs/normalize-8.0.0.min.css')
+        link(rel="stylesheet" href='libs/slick/slick.min.css')
+        link(rel="stylesheet" href='libs/viewbox/viewbox.min.css')
+        link(rel="stylesheet" href='libs/animate.min.css')
         <!--build:css css/main.min.css-->
         link(rel="stylesheet" href='css/main.css')
         <!--endbuild-->
@@ -19,6 +22,10 @@ mixin title(pageName)
 mixin script
     script(src='libs/jquery-3.3.1.min.js')
     script(src='libs/svg4everybody.min.js')
+    script(src='libs/slick/slick.min.js')
+    script(src='libs/viewbox/viewbox.min.js')
+    script(src='libs/countto.min.js')
+    script(src='libs/wow.min.js')
     <!--build:js js/main.min.js-->
     script(src='js/main.js')
     <!--endbuild-->

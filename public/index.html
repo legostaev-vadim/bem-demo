@@ -8,55 +8,608 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <title>Waxom</title>
     <link rel="stylesheet" href="libs/normalize-8.0.0.min.css" />
+    <link rel="stylesheet" href="libs/slick/slick.min.css" />
+    <link rel="stylesheet" href="libs/viewbox/viewbox.min.css" />
+    <link rel="stylesheet" href="libs/animate.min.css" />
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 
 <body class="page">
 
-    <main class="main">
+    <nav class="menu">
+        <div class="menu__wrapper">
+            <button class="menu__button"></button>
+            <a class="logo menu__logo" href="#">
+                <svg class="symbol logo__icon" viewBox="0 0 66 59">
+                    <use xlink:href="img/symbols.svg#logos"></use>
+                </svg>
+                <p class="logo__text">Waxom</p>
+            </a>
+            <a class="cart menu__cart" href="#">
+                <svg class="symbol cart__icon" viewBox="0 0 20 27">
+                    <use xlink:href="img/symbols.svg#cart"></use>
+                </svg>
+            </a>
+            <form class="search menu__search" action="#" method="POST">
+                <div class="search__case">
+                    <button class="search__close" type="button"></button>
+                    <input class="search__query" type="search" name="query" placeholder="enter your request" required="required" />
+                </div>
+                <button class="search__submit" type="submit">
+                    <svg class="symbol search__icon" viewBox="0 0 27 28">
+                        <use xlink:href="img/symbols.svg#search"></use>
+                    </svg>
+                </button>
+            </form>
+            <div class="menu__list">
+                <a class="menu__item" href="#">Home</a>
+                <a class="menu__item menu__item--active" href="#">About Us</a>
+                <a class="menu__item" href="#">Portfolio</a>
+                <a class="menu__item" href="#">Features</a>
+                <a class="menu__item" href="#">Blog</a>
+                <a class="menu__item" href="#">Pricing</a>
+                <a class="menu__item" href="#">Shortcodes</a>
+                <a class="menu__item" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-        <nav class="menu">
-            <div class="menu__wrapper">
-                <button class="menu__button"></button>
-                <a class="logo menu__logo" href="#">
-                    <svg class="symbol logo__symbol" viewBox="0 0 66 59">
-                        <use xlink:href="img/icons.svg#logos"></use>
-                    </svg>
-                    <p class="logo__text">Waxom</p>
-                </a>
-                <a class="cart menu__cart" href="#">
-                    <svg class="symbol cart__symbol" viewBox="0 0 20 27">
-                        <use xlink:href="img/icons.svg#cart"></use>
-                    </svg>
-                </a>
-                <form class="search menu__search" action="#" method="POST">
-                    <div class="search__mask">
-                        <button class="search__close" type="button"></button>
-                        <input class="search__query" type="search" name="query" placeholder="enter your request" required="required" />
-                    </div>
-                    <button class="search__submit" type="submit">
-                        <svg class="symbol search__symbol" viewBox="0 0 27 28">
-                            <use xlink:href="img/icons.svg#search"></use>
-                        </svg>
-                    </button>
-                </form>
-                <div class="menu__list">
-                    <a class="menu__item" href="#">Home</a>
-                    <a class="menu__item" href="#">About Us</a>
-                    <a class="menu__item" href="#">Portfolio</a>
-                    <a class="menu__item" href="#">Features</a>
-                    <a class="menu__item" href="#">Blog</a>
-                    <a class="menu__item" href="#">Pricing</a>
-                    <a class="menu__item menu__item--active" href="#">Shortcodes</a>
-                    <a class="menu__item" href="#">Contact</a>
+    <header class="header">
+        <div class="header__slider">
+            <div class="header__item header__item--background_01">
+                <div class="header__wrapper">
+                    <h1 class="header__title">Unique and Modern Design</h1>
+                    <h2 class="header__subtitle">Portfolio PSD Template</h2>
+                    <p class="header__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper<br> diet doming id quod mazim placerat facer possim assum.</p>
+                    <a class="button header__button" href="#" data-wow-offset="180">Get Started</a>
                 </div>
             </div>
-        </nav>
+            <div class="header__item header__item--background_02">
+                <div class="header__wrapper">
+                    <h1 class="header__title">Maecenas tempus Tellus</h1>
+                    <h2 class="header__subtitle">Aenean Eleifend tellus</h2>
+                    <p class="header__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo ligula eget dolor.<br> Cum sociis natoque penatibus et magnis.</p>
+                    <a class="button header__button" href="#" data-wow-offset="180">Get Started</a>
+                </div>
+            </div>
+            <div class="header__item header__item--background_03">
+                <div class="header__wrapper">
+                    <h1 class="header__title">Fusce vulputate Eleifend</h1>
+                    <h2 class="header__subtitle">Curabitur ligula Sapien</h2>
+                    <p class="header__text">Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus<br> orci luctus et ultrices posuere cubilia curae.</p>
+                    <a class="button header__button" href="#" data-wow-offset="180">Get Started</a>
+                </div>
+            </div>
+            <div class="header__item header__item--background_04">
+                <div class="header__wrapper">
+                    <h1 class="header__title">Aenean vulputate Eleifend</h1>
+                    <h2 class="header__subtitle">Phasellus eget Cursus</h2>
+                    <p class="header__text">Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing.<br> Phasellus ullamcorper ipsum rutrum nunc.</p>
+                    <a class="button header__button" href="#" data-wow-offset="180">Get Started</a>
+                </div>
+            </div>
+            <div class="header__item header__item--background_05">
+                <div class="header__wrapper">
+                    <h1 class="header__title">Integer ante nunc Accumsan</h1>
+                    <h2 class="header__subtitle">Donec mollis Hendrerit</h2>
+                    <p class="header__text">Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula<br> sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.</p>
+                    <a class="button header__button" href="#" data-wow-offset="180">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <svg class="symbol header__arrow header__arrow--prev" viewBox="0 0 42 75">
+            <use xlink:href="img/symbols.svg#big-arrow"></use>
+        </svg>
+        <svg class="symbol header__arrow header__arrow--next" viewBox="0 0 42 75">
+            <use xlink:href="img/symbols.svg#big-arrow"></use>
+        </svg>
+    </header>
+
+    <main class="main">
+
+        <section class="services">
+            <div class="services__wrapper">
+                <div class="services__item wow bounceInUp" data-wow-offset="150">
+                    <figure class="services__box">
+                        <svg class="symbol services__icon services__icon--pencil" viewBox="0 0 51 51">
+                            <use xlink:href="img/symbols.svg#pencil"></use>
+                        </svg>
+                    </figure>
+                    <h2 class="services__title">Web & App Design</h2>
+                    <p class="services__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
+                </div>
+                <div class="services__item wow slideInUp" data-wow-offset="150">
+                    <figure class="services__box">
+                        <svg class="symbol services__icon services__icon--pile" viewBox="0 0 46 42">
+                            <use xlink:href="img/symbols.svg#pile"></use>
+                        </svg>
+                    </figure>
+                    <h2 class="services__title">Development</h2>
+                    <p class="services__text">Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+                </div>
+                <div class="services__item wow bounceInUp" data-wow-offset="150">
+                    <figure class="services__box">
+                        <svg class="symbol services__icon services__icon--gear" viewBox="0 0 46 46">
+                            <use xlink:href="img/symbols.svg#gear"></use>
+                        </svg>
+                    </figure>
+                    <h2 class="services__title">Customization</h2>
+                    <p class="services__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
+                </div>
+                <div class="services__item wow slideInUp" data-wow-offset="150">
+                    <figure class="services__box">
+                        <svg class="symbol services__icon services__icon--folder" viewBox="0 0 55 38">
+                            <use xlink:href="img/symbols.svg#folder"></use>
+                        </svg>
+                    </figure>
+                    <h2 class="services__title">Marketing</h2>
+                    <p class="services__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="realize">
+            <div class="realize__wrapper">
+                <div class="caption wow zoomIn caption--padding" data-wow-offset="150">
+                    <h2 class="caption__title">Waxom is Realization of your Ideas.</h2>
+                    <h3 class="caption__subtitle">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam<br> processus dynamicus, qui sequitur mutationem consuetudium.</h3>
+                </div>
+                <figure class="realize__images">
+                    <img class="realize__img realize__img--position_01 wow bounceInLeft" src="img/realize/001.jpg" data-wow-offset="250" alt="" />
+                    <img class="realize__img realize__img--position_02 wow slideInUp" src="img/realize/002.jpg" data-wow-offset="50" alt="" />
+                    <img class="realize__img realize__img--position_03 wow bounceInRight" src="img/realize/003.jpg" data-wow-offset="250" alt="" />
+                </figure>
+            </div>
+        </section>
+
+        <section class="multipur">
+            <div class="multipur__wrapper">
+                <div class="multipur__group">
+                    <h2 class="multipur__title wow fadeInDown" data-wow-offset="60">
+                        <mark class="multipur__select">Waxom </mark>Multipurpose WordPress Theme
+                    </h2>
+                    <h3 class="multipur__subtitle wow fadeInLeft" data-wow-offset="80">Don't Forget to Rate the Template. Thanks so much!</h3>
+                </div>
+                <a class="button multipur__button wow rotateInDownRight" href="#" data-wow-offset="180">Purchase Now</a>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="projects__wrapper">
+                <div class="caption wow zoomIn caption--padding" data-wow-offset="150">
+                    <h2 class="caption__title">Our Latest Projects.</h2>
+                    <h3 class="caption__subtitle">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam<br> processus dynamicus, qui sequitur mutationem consuetudium.</h3>
+                </div>
+                <div class="toolbar projects__toolbar">
+
+                    <nav class="toolbar__menu">
+                        <a class="toolbar__item toolbar__item--active" href="#" data-page="all">All</a>
+                        <a class="toolbar__item" href="#" data-page="design">Web Design</a>
+                        <a class="toolbar__item" href="#" data-page="mobile">Mobile App</a>
+                        <a class="toolbar__item" href="#" data-page="illustration">Illustration</a>
+                        <a class="toolbar__item" href="#" data-page="photography">Photography</a>
+                    </nav>
+                    <div class="toolbar__container">
+                        <div class="toolbar__block">
+                            <figure class="toolbar__group wow bounceInLeft" data-wow-offset="150">
+                                <div class="toolbar__wrap">
+                                    <img class="toolbar__img" src="img/projects/001.jpeg" alt="" />
+                                    <div class="toolbar__cover">
+                                        <a class="toolbar__link-page" href="#">
+                                            <svg class="symbol toolbar__icon-link" viewBox="0 0 28 28">
+                                                <use xlink:href="img/symbols.svg#link"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="toolbar__link-view" href="img/projects/001-b.jpg">
+                                            <svg class="symbol toolbar__icon-view" viewBox="0 0 29 27">
+                                                <use xlink:href="img/symbols.svg#lupa"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <figcaption class="toolbar__capt">
+                                    <h2 class="toolbar__title">Claritas Etiam Processus</h2>
+                                    <p class="toolbar__text">Photography, Nature</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="toolbar__group wow flipInY" data-wow-offset="150">
+                                <div class="toolbar__wrap">
+                                    <img class="toolbar__img" src="img/projects/002.jpeg" alt="" />
+                                    <div class="toolbar__cover">
+                                        <a class="toolbar__link-page" href="#">
+                                            <svg class="symbol toolbar__icon-link" viewBox="0 0 28 28">
+                                                <use xlink:href="img/symbols.svg#link"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="toolbar__link-view" href="img/projects/002-b.jpg">
+                                            <svg class="symbol toolbar__icon-view" viewBox="0 0 29 27">
+                                                <use xlink:href="img/symbols.svg#lupa"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <figcaption class="toolbar__capt">
+                                    <h2 class="toolbar__title">Quam Nutamus Farum</h2>
+                                    <p class="toolbar__text">Graphic Design, Mock-Up</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="toolbar__group wow slideInRight" data-wow-offset="150">
+                                <div class="toolbar__wrap">
+                                    <img class="toolbar__img" src="img/projects/003.jpeg" alt="" />
+                                    <div class="toolbar__cover">
+                                        <a class="toolbar__link-page" href="#">
+                                            <svg class="symbol toolbar__icon-link" viewBox="0 0 28 28">
+                                                <use xlink:href="img/symbols.svg#link"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="toolbar__link-view" href="img/projects/003-b.jpg">
+                                            <svg class="symbol toolbar__icon-view" viewBox="0 0 29 27">
+                                                <use xlink:href="img/symbols.svg#lupa"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <figcaption class="toolbar__capt">
+                                    <h2 class="toolbar__title">Usus Legentis Videntur</h2>
+                                    <p class="toolbar__text">Photography, Holiday</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="toolbar__group wow slideInLeft" data-wow-offset="150">
+                                <div class="toolbar__wrap">
+                                    <img class="toolbar__img" src="img/projects/004.jpeg" alt="" />
+                                    <div class="toolbar__cover">
+                                        <a class="toolbar__link-page" href="#">
+                                            <svg class="symbol toolbar__icon-link" viewBox="0 0 28 28">
+                                                <use xlink:href="img/symbols.svg#link"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="toolbar__link-view" href="img/projects/004-b.jpg">
+                                            <svg class="symbol toolbar__icon-view" viewBox="0 0 29 27">
+                                                <use xlink:href="img/symbols.svg#lupa"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <figcaption class="toolbar__capt">
+                                    <h2 class="toolbar__title">Claritas Etiam Processus</h2>
+                                    <p class="toolbar__text">Photography, Nature</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="toolbar__group wow slideInUp" data-wow-offset="150">
+                                <div class="toolbar__wrap">
+                                    <img class="toolbar__img" src="img/projects/005.jpeg" alt="" />
+                                    <div class="toolbar__cover">
+                                        <a class="toolbar__link-page" href="#">
+                                            <svg class="symbol toolbar__icon-link" viewBox="0 0 28 28">
+                                                <use xlink:href="img/symbols.svg#link"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="toolbar__link-view" href="img/projects/005-b.jpg">
+                                            <svg class="symbol toolbar__icon-view" viewBox="0 0 29 27">
+                                                <use xlink:href="img/symbols.svg#lupa"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <figcaption class="toolbar__capt">
+                                    <h2 class="toolbar__title">Quam Nutamus Farum</h2>
+                                    <p class="toolbar__text">Graphic Design, Mock-Up</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="toolbar__group wow bounceInRight" data-wow-offset="150">
+                                <div class="toolbar__wrap">
+                                    <img class="toolbar__img" src="img/projects/006.jpeg" alt="" />
+                                    <div class="toolbar__cover">
+                                        <a class="toolbar__link-page" href="#">
+                                            <svg class="symbol toolbar__icon-link" viewBox="0 0 28 28">
+                                                <use xlink:href="img/symbols.svg#link"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="toolbar__link-view" href="img/projects/006-b.jpg">
+                                            <svg class="symbol toolbar__icon-view" viewBox="0 0 29 27">
+                                                <use xlink:href="img/symbols.svg#lupa"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <figcaption class="toolbar__capt">
+                                    <h2 class="toolbar__title">Usus Legentis Videntur</h2>
+                                    <p class="toolbar__text">Photography, Holiday</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <a class="button projects__button wow bounceInDown" href="#" data-wow-offset="180">Load More</a>
+            </div>
+        </section>
+
+        <section class="present">
+            <div class="present__wrapper">
+                <button class="present__button wow rotateIn" data-wow-offset="150">
+                    <svg class="symbol present__play present__play--show" viewBox="0 0 80 76">
+                        <use xlink:href="img/symbols.svg#play"></use>
+                    </svg>
+                    <svg class="symbol present__pause" viewBox="0 0 80 76">
+                        <use xlink:href="img/symbols.svg#pause"></use>
+                    </svg>
+                </button>
+                <h2 class="present__title wow slideInUp">Waxom Video Presentation</h2>
+                <h3 class="present__subtitle wow slideInUp">Investigationes demonstraverunt lectores legere me lius quod ii legunt<br> saepius, qui sequitur mutationem consuetudium.</h3>
+                <time class="present__time wow slideInUp">00:00</time>
+                <video class="present__video" preload="metadata" playsinline="playsinline" loop="loop" muted="muted">
+                    <source src="mov/present/WebDesign.webm" type="video/webm" />
+                    <source src="mov/present/WebDesign.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </section>
+
+        <section class="mobile">
+            <div class="mobile__wrapper">
+                <figure class="mobile__left wow slideInLeft" data-wow-offset="150">
+                    <img class="mobile__img" src="img/mobile/001.png" alt="" />
+                </figure>
+                <div class="mobile__right">
+                    <h2 class="mobile__title wow rotateInDownLeft" data-wow-offset="150">Excellent for Mobile Devices.</h2>
+                    <p class="mobile__text">Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi,
+                        qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                    <p class="mobile__item wow slideInRight" data-wow-offset="150">Nam liber tempor cum soluta nobis eleifend option;
+                        <svg class="symbol mobile__arrow" viewBox="0 0 23 23">
+                            <use xlink:href="img/symbols.svg#fill-arrow"></use>
+                        </svg>
+                    </p>
+                    <p class="mobile__item wow slideInRight" data-wow-offset="150">Option congue nihil imperdiet doming id quod mazim placerat facer;
+                        <svg class="symbol mobile__arrow" viewBox="0 0 23 23">
+                            <use xlink:href="img/symbols.svg#fill-arrow"></use>
+                        </svg>
+                    </p>
+                    <p class="mobile__item wow slideInRight" data-wow-offset="150">Eodem modo typi, qui nunc nobis videntur parum futurum;
+                        <svg class="symbol mobile__arrow" viewBox="0 0 23 23">
+                            <use xlink:href="img/symbols.svg#fill-arrow"></use>
+                        </svg>
+                    </p>
+                    <p class="mobile__item wow slideInRight" data-wow-offset="150">Investigationes demonstraverunt lectores;
+                        <svg class="symbol mobile__arrow" viewBox="0 0 23 23">
+                            <use xlink:href="img/symbols.svg#fill-arrow"></use>
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="counter">
+            <div class="counter__wrapper">
+                <div class="counter__item">
+                    <figure class="counter__box">
+                        <svg class="symbol counter__icon counter__icon--users" viewBox="0 0 46 47">
+                            <use xlink:href="img/symbols.svg#users"></use>
+                        </svg>
+                    </figure>
+                    <p class="counter__text wow" data-to="3587" data-speed="2600">3587</p>
+                    <h2 class="counter__title">Satisfied Clients</h2>
+                </div>
+                <div class="counter__item">
+                    <figure class="counter__box">
+                        <svg class="symbol counter__icon counter__icon--coffee" viewBox="0 0 51 47">
+                            <use xlink:href="img/symbols.svg#coffee"></use>
+                        </svg>
+                    </figure>
+                    <p class="counter__text wow" data-to="207" data-speed="1200">207</p>
+                    <h2 class="counter__title">Cups of coffee</h2>
+                </div>
+                <div class="counter__item">
+                    <figure class="counter__box">
+                        <svg class="symbol counter__icon counter__icon--quote" viewBox="0 0 46 46">
+                            <use xlink:href="img/symbols.svg#quote"></use>
+                        </svg>
+                    </figure>
+                    <p class="counter__text wow" data-to="2500" data-speed="2000">2500</p>
+                    <h2 class="counter__title">Blog posts</h2>
+                </div>
+                <div class="counter__item">
+                    <figure class="counter__box">
+                        <svg class="symbol counter__icon counter__icon--heart" viewBox="0 0 47 47">
+                            <use xlink:href="img/symbols.svg#heart"></use>
+                        </svg>
+                    </figure>
+                    <p class="counter__text wow" data-to="873" data-speed="1200">873</p>
+                    <h2 class="counter__title">Likes</h2>
+                </div>
+                <div class="counter__item">
+                    <figure class="counter__box">
+                        <svg class="symbol counter__icon counter__icon--cap" viewBox="0 0 56 46">
+                            <use xlink:href="img/symbols.svg#cap"></use>
+                        </svg>
+                    </figure>
+                    <p class="counter__text wow" data-to="900" data-speed="1900">900</p>
+                    <h2 class="counter__title">We launched</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="posts">
+            <div class="posts__wrapper">
+                <div class="caption wow zoomIn caption--padding" data-wow-offset="150">
+                    <h2 class="caption__title">Recent Posts.</h2>
+                    <h3 class="caption__subtitle">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam<br> processus dynamicus, qui sequitur mutationem consuetudium.</h3>
+                </div>
+                <div class="posts__slider">
+                    <figure class="posts__item">
+                        <div class="posts__wrap">
+                            <img class="posts__img" src="img/posts/001.jpeg" alt="" />
+                            <div class="posts__time">
+                                <p class="posts__day">30</p>
+                                <p class="posts__month">Sep.</p>
+                            </div>
+                        </div>
+                        <figcaption class="posts__capt">
+                            <h2 class="posts__title">Lorem ipsum dolor sit amet</h2>
+                            <p class="posts__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                            <a class="posts__more" href="#">Read More</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="posts__item">
+                        <div class="posts__wrap">
+                            <img class="posts__img" src="img/posts/002.jpeg" alt="" />
+                            <div class="posts__time">
+                                <p class="posts__day">30</p>
+                                <p class="posts__month">Sep.</p>
+                            </div>
+                        </div>
+                        <figcaption class="posts__capt">
+                            <h2 class="posts__title">Lorem ipsum dolor sit amet</h2>
+                            <p class="posts__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                            <a class="posts__more" href="#">Read More</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="posts__item">
+                        <div class="posts__wrap">
+                            <img class="posts__img" src="img/posts/003.jpeg" alt="" />
+                            <div class="posts__time">
+                                <p class="posts__day">30</p>
+                                <p class="posts__month">Sep.</p>
+                            </div>
+                        </div>
+                        <figcaption class="posts__capt">
+                            <h2 class="posts__title">Lorem ipsum dolor sit amet</h2>
+                            <p class="posts__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                            <a class="posts__more" href="#">Read More</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="posts__item">
+                        <div class="posts__wrap">
+                            <img class="posts__img" src="img/posts/004.jpeg" alt="" />
+                            <div class="posts__time">
+                                <p class="posts__day">30</p>
+                                <p class="posts__month">Sep.</p>
+                            </div>
+                        </div>
+                        <figcaption class="posts__capt">
+                            <h2 class="posts__title">Lorem ipsum dolor sit amet</h2>
+                            <p class="posts__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                            <a class="posts__more" href="#">Read More</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="posts__item">
+                        <div class="posts__wrap">
+                            <img class="posts__img" src="img/posts/005.jpeg" alt="" />
+                            <div class="posts__time">
+                                <p class="posts__day">30</p>
+                                <p class="posts__month">Sep.</p>
+                            </div>
+                        </div>
+                        <figcaption class="posts__capt">
+                            <h2 class="posts__title">Lorem ipsum dolor sit amet</h2>
+                            <p class="posts__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                            <a class="posts__more" href="#">Read More</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="posts__block wow pulse" data-wow-offset="100">
+                    <svg class="symbol posts__arrow posts__arrow--prev" viewBox="0 0 24 24">
+                        <use xlink:href="img/symbols.svg#round-arrow"></use>
+                    </svg>
+                    <svg class="symbol posts__arrow posts__arrow--next" viewBox="0 0 24 24">
+                        <use xlink:href="img/symbols.svg#round-arrow"></use>
+                    </svg>
+                </div>
+            </div>
+        </section>
 
     </main>
+    <div class="banner">
+        <div class="banner__wrapper">
+            <img class="banner__img" src="img/banner/001.png" alt="" />
+            <img class="banner__img" src="img/banner/002.png" alt="" />
+            <img class="banner__img" src="img/banner/003.png" alt="" />
+            <img class="banner__img" src="img/banner/004.png" alt="" />
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__wrapper footer__wrapper--main">
+                <div class="footer__item">
+                    <a class="logo footer__logo" href="#">
+                        <svg class="symbol logo__icon" viewBox="0 0 66 59">
+                            <use xlink:href="img/symbols.svg#logos"></use>
+                        </svg>
+                        <p class="logo__text">Waxom</p>
+                    </a>
+                    <p class="footer__text footer__text--line">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.</p>
+                    <a
+                        class="footer__more" href="#">Read More</a>
+                </div>
+                <div class="footer__item">
+                    <h2 class="footer__title">Recent Posts</h2>
+                    <a class="footer__post" href="#">
+                        <p class="footer__text footer__text--border"><span class="footer__time">September 08, 2015</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+                    </a>
+                    <a class="footer__post" href="#">
+                        <p class="footer__text footer__text--border"><span class="footer__time">September 08, 2015</span>Diam nonummy nibh euismod tincidunt ut laoreet dolore magna</p>
+                    </a>
+                    <a class="footer__post" href="#">
+                        <p class="footer__text"><span class="footer__time">September 08, 2015</span>Claritas est etiam processus dynamicus, qui sequitur mutationem per seacula quarta decima</p>
+                    </a>
+                </div>
+                <div class="footer__item">
+                    <h2 class="footer__title">Our Twitter</h2>
+                    <a class="footer__post" href="#">
+                        <p class="footer__text footer__text--border">
+                            <mark class="footer__select">@waxom </mark>Cum soluta nobis eleifend option congue nihil imperdiet doming<span class="footer__time">3 mins ago</span>
+                        </p>
+                    </a>
+                    <a class="footer__post" href="#">
+                        <p class="footer__text footer__text--border">Mirum est
+                            <mark class="footer__select">#envato </mark>notare quam littera gothica, quam nunc putamus parum anteposuerit litterarum<span class="footer__time">3 mins ago</span>
+                        </p>
+                    </a>
+                    <a class="footer__post" href="#">
+                        <p class="footer__text">Soluta nobis option
+                            <mark class="footer__select footer__select--light">bit.ly/1Hniso7</mark><span class="footer__time">20 days ago</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="footer__item">
+                    <h2 class="footer__title">Dribbble Widget</h2>
+                    <figure class="widget footer__widget">
+                        <a class="widget__link" href="#">
+                            <img class="widget__img" src="img/widget/001.jpeg" alt="" />
+                        </a>
+                        <a class="widget__link" href="#">
+                            <img class="widget__img" src="img/widget/002.jpeg" alt="" />
+                        </a>
+                        <a class="widget__link" href="#">
+                            <img class="widget__img" src="img/widget/003.jpeg" alt="" />
+                        </a>
+                        <a class="widget__link" href="#">
+                            <img class="widget__img" src="img/widget/004.jpeg" alt="" />
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__wrapper footer__wrapper--bottom">
+                <div class="footer__left"><span class="footer__copy">Copyright © 2015 <span>Waxom</span></span>|
+                    <a class="footer__link" href="#">Privacy Policy</a>|
+                    <a class="footer__link" href="#">FAQ</a>|
+                    <a class="footer__link" href="#">Support</a>
+                </div>
+                <div class="footer__right">
+                    <a class="footer__link" href="#">Designed by <span>ThemeFire</span></a>|
+                    <a class="footer__link" href="#">Only on <span>Envato Market</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <button class="button-up"></button>
     <script src="libs/jquery-3.3.1.min.js"></script>
     <script src="libs/svg4everybody.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="libs/viewbox/viewbox.min.js"></script>
+    <script src="libs/countto.min.js"></script>
+    <script src="libs/wow.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
 

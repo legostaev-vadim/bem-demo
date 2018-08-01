@@ -1,13 +1,14 @@
 /* menu
 -------------------------------- */
+$height: 50px;
 .menu {
     position: fixed;
     top: 0;
     z-index: 10000;
     width: 100%;
-    height: 50px;
+    height: $height;
     overflow: hidden;
-    background: rgba(0,0,0,.9);
+    background: rgba(23, 5, 1, .9);
     transition: height $duration;
     &--open {
         height: 100%;
@@ -24,7 +25,7 @@
             content: '';
             display: block;
             width: 0;
-            height: 50px;
+            height: $height;
         }
     }
 
@@ -66,16 +67,16 @@
         }
     }
 
-    &__logo {
+    & &__logo {
         order: -2;
         margin-right: auto;
     }
 
-    &__cart {
+    & &__cart {
         margin-right: 8px;
     }
 
-    &__search {
+    & &__search {
         margin-right: 12px;
     }
 
@@ -92,36 +93,36 @@
         text-decoration: none;
         font-family: $font-primary-medium;
         font-size: 16px;
-        color: $head-primary-color;
+        color: $color-secondary-dark;
         padding: 14px 15px;
         background: $color-primary-light;
         border-bottom: 1px solid #ddd;
         &:hover {
-            color: $color-primary-light;
+            color: $text-secondary-color;
             background: $color-primary-hover;
             border-bottom-color: $color-primary-hover;
         }
         &--active {
-            color: $text-primary-active;
+            color: $text-primary-accent;
         }
         &--current {
             order: -1;
             display: none;
             margin-right: 16px;
-            color: $text-primary-active;
+            color: $text-primary-accent;
             padding: 0;
             border-bottom: none;
             background: transparent;
             &:hover {
-                color: $text-primary-active;
+                color: $text-primary-accent;
                 background: transparent;
             }
         }
     }
 
     @include min($screen-nm) {
-        &__search {
-            .search__mask {
+        & &__search {
+            .search__case {
                 &--open {
                     left: -280px;
                 }
@@ -142,7 +143,7 @@
         background: none;
         transition: background-color $duration + $overtime;
         &--fill {
-            background: rgba(0,0,0,.9);
+            background: rgba(23, 5, 1, .9);
         }
         &__wrapper {
             height: auto;
@@ -162,26 +163,26 @@
         &__button {
             display: none;
         }
-        &__logo {
+        & &__logo {
             font-size: 34px;
             transition: font-size $duration + $overtime;
-            .logo__symbol {
+            .logo__icon {
                 height: 59px;
                 transition: height $duration + $overtime;
             }
             &--small {
                 font-size: 32px;
-                .logo__symbol {
+                .logo__icon {
                     height: 26px;
                 }
             }
         }
     
-        &__cart {
+        & &__cart {
             margin-right: 1.8%;
         }
     
-        &__search {
+        & &__search {
             margin-right: -5px;
         }
         &__list {
@@ -197,7 +198,7 @@
             margin-right: 3.68%;
             padding: 0;
             font-size: 14px;
-            color: $color-primary-light;
+            color: $text-secondary-color;
             background: transparent;
             border: none;
             transition: opacity $duration;
@@ -210,9 +211,9 @@
             }
             &--active {
                 display: block;
-                color: $text-primary-active;
+                color: $text-primary-accent;
                 &:hover {
-                    color: $text-primary-active;
+                    color: $text-primary-accent;
                     opacity: 1;
                 }
             }

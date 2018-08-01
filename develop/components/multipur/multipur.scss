@@ -1,0 +1,56 @@
+/* multipur
+-------------------------------- */
+.multipur {
+    padding-top: 24px;
+    padding-bottom: 26px;
+    background: linear-gradient(to right, #211b19, #4e3427);
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__group {
+        margin-right: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $font-primary-medium;
+        font-size: 26px;
+        font-weight: normal;
+        color: $text-secondary-color;
+    }
+
+    &__select {
+        color: $text-primary-accent;
+        background: transparent;
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-top: 6px;
+        font-family: $font-primary-medium;
+        font-size: 18px;
+        font-weight: normal;
+        letter-spacing: .5px;
+        color: $text-primary-decor;
+    }
+
+    & &__button {
+        margin: 20px 0;
+        margin-left: auto;
+    }
+
+    @include min($screen-sm) {
+        &__group {
+            margin-right: 70px;
+        }
+        &__title {
+            font-size: 28px;
+        }
+    }
+}

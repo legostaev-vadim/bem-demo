@@ -1,0 +1,76 @@
+mixin toolbar(mix)
+    .toolbar(class=mix)
+        nav._menu
+            a._item.--active(href="#" data-page="all") All
+            a._item(href="#" data-page="design") Web Design
+            a._item(href="#" data-page="mobile") Mobile App
+            a._item(href="#" data-page="illustration") Illustration
+            a._item(href="#" data-page="photography") Photography
+        ._container
+            ._block
+                figure._group.wow.bounceInLeft(data-wow-offset="150")
+                    ._wrap
+                        img._img(src="img/projects/001.jpeg", alt="")
+                        ._cover
+                            a._link-page(href="#")
+                                +symbol('toolbar__icon-link', 'link', '0 0 28 28')
+                            a._link-view(href="img/projects/001-b.jpg")
+                                +symbol('toolbar__icon-view', 'lupa', '0 0 29 27')
+                    figcaption._capt
+                        h2._title Claritas Etiam Processus
+                        p._text Photography, Nature
+                figure._group.wow.flipInY(data-wow-offset="150")
+                    ._wrap
+                        img._img(src="img/projects/002.jpeg", alt="")
+                        ._cover
+                            a._link-page(href="#")
+                                +symbol('toolbar__icon-link', 'link', '0 0 28 28')
+                            a._link-view(href="img/projects/002-b.jpg")
+                                +symbol('toolbar__icon-view', 'lupa', '0 0 29 27')
+                    figcaption._capt
+                        h2._title Quam Nutamus Farum
+                        p._text Graphic Design, Mock-Up
+                figure._group.wow.slideInRight(data-wow-offset="150")
+                    ._wrap
+                        img._img(src="img/projects/003.jpeg", alt="")
+                        ._cover
+                            a._link-page(href="#")
+                                +symbol('toolbar__icon-link', 'link', '0 0 28 28')
+                            a._link-view(href="img/projects/003-b.jpg")
+                                +symbol('toolbar__icon-view', 'lupa', '0 0 29 27')
+                    figcaption._capt
+                        h2._title Usus Legentis Videntur
+                        p._text Photography, Holiday
+                figure._group.wow.slideInLeft(data-wow-offset="150")
+                    ._wrap
+                        img._img(src="img/projects/004.jpeg", alt="")
+                        ._cover
+                            a._link-page(href="#")
+                                +symbol('toolbar__icon-link', 'link', '0 0 28 28')
+                            a._link-view(href="img/projects/004-b.jpg")
+                                +symbol('toolbar__icon-view', 'lupa', '0 0 29 27')
+                    figcaption._capt
+                        h2._title Claritas Etiam Processus
+                        p._text Photography, Nature
+                figure._group.wow.slideInUp(data-wow-offset="150")
+                    ._wrap
+                        img._img(src="img/projects/005.jpeg", alt="")
+                        ._cover
+                            a._link-page(href="#")
+                                +symbol('toolbar__icon-link', 'link', '0 0 28 28')
+                            a._link-view(href="img/projects/005-b.jpg")
+                                +symbol('toolbar__icon-view', 'lupa', '0 0 29 27')
+                    figcaption._capt
+                        h2._title Quam Nutamus Farum
+                        p._text Graphic Design, Mock-Up
+                figure._group.wow.bounceInRight(data-wow-offset="150")
+                    ._wrap
+                        img._img(src="img/projects/006.jpeg", alt="")
+                        ._cover
+                            a._link-page(href="#")
+                                +symbol('toolbar__icon-link', 'link', '0 0 28 28')
+                            a._link-view(href="img/projects/006-b.jpg")
+                                +symbol('toolbar__icon-view', 'lupa', '0 0 29 27')
+                    figcaption._capt
+                        h2._title Usus Legentis Videntur
+                        p._text Photography, Holiday

@@ -1,12 +1,15 @@
 /* search
 -------------------------------- */
 .search {
+    height: 32px;
+    display: inline-block;
     position: relative;
 
-    &__mask {
+    &__case {
         position: absolute;
         display: flex;
         left: 0;
+        height: 100%;
         right: 34px;
         overflow: hidden;
         transition: left $duration;
@@ -17,13 +20,14 @@
 
     &__close {
         position: relative;
-        height: 32px;
+        height: 100%;
         width: 34px;
         padding: 0;
         cursor: pointer;
         border: none;
         border-radius: $radius 0 0 $radius;
-        background: #ccc;
+        background: $color-secondary-light;
+        transition: background-color $duration;
         &::before, &::after {
             content: '';
             position: absolute;
@@ -42,7 +46,7 @@
 
     &__query {
         flex: 1;
-        height: 32px;
+        height: 100%;
         max-width: calc(100% - 34px);
         padding: 0 10px;
         font-family: $font-primary-regular;
@@ -55,13 +59,13 @@
         display: flex;
         align-self: center;
         justify-content: center;
-        height: 32px;
+        height: 100%;
         width: 34px;
         padding: 0;
         cursor: pointer;
         border: none;
         background: transparent;
-        transition: opacity $duration;
+        transition: all $duration;
         &:hover {
             opacity: $opacity;
         }
@@ -77,7 +81,7 @@
         }
     }
 
-    &__symbol {
+    &__icon {
         height: 28px;
         fill: $color-primary-light;
         &--small {

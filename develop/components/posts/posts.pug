@@ -1,0 +1,58 @@
+mixin posts(mix)
+    section.posts(class=mix)
+        ._wrapper
+            +caption('caption--padding', 'Recent Posts.', 'Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam<br> processus dynamicus, qui sequitur mutationem consuetudium.')
+            ._slider
+                figure._item
+                    ._wrap
+                        img._img(src="img/posts/001.jpeg", alt="")
+                        ._time
+                            p._day 30
+                            p._month Sep.
+                    figcaption._capt
+                        h2._title Lorem ipsum dolor sit amet
+                        p._text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                        a._more(href="#") Read More
+                figure._item
+                    ._wrap
+                        img._img(src="img/posts/002.jpeg", alt="")
+                        ._time
+                            p._day 30
+                            p._month Sep.
+                    figcaption._capt
+                        h2._title Lorem ipsum dolor sit amet
+                        p._text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                        a._more(href="#") Read More
+                figure._item
+                    ._wrap
+                        img._img(src="img/posts/003.jpeg", alt="")
+                        ._time
+                            p._day 30
+                            p._month Sep.
+                    figcaption._capt
+                        h2._title Lorem ipsum dolor sit amet
+                        p._text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                        a._more(href="#") Read More
+                figure._item
+                    ._wrap
+                        img._img(src="img/posts/004.jpeg", alt="")
+                        ._time
+                            p._day 30
+                            p._month Sep.
+                    figcaption._capt
+                        h2._title Lorem ipsum dolor sit amet
+                        p._text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                        a._more(href="#") Read More
+                figure._item
+                    ._wrap
+                        img._img(src="img/posts/005.jpeg", alt="")
+                        ._time
+                            p._day 30
+                            p._month Sep.
+                    figcaption._capt
+                        h2._title Lorem ipsum dolor sit amet
+                        p._text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                        a._more(href="#") Read More
+            ._block.wow.pulse(data-wow-offset="100")
+                +symbol('posts__arrow posts__arrow--prev', 'round-arrow', '0 0 24 24')
+                +symbol('posts__arrow posts__arrow--next', 'round-arrow', '0 0 24 24')

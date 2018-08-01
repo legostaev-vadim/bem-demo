@@ -1,0 +1,155 @@
+/* present
+-------------------------------- */
+.present {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(17,17,17,.5), rgba(17,17,17,.5)), url('../img/present/poster.jpeg') no-repeat;
+    background-size: cover;
+    transition: background-color $duration;
+    &--background_none {
+        background: transparent;
+    }
+    &--background_dark {
+        background: rgba(17,17,17,.5);
+    }
+    &--hide-content {
+        .present__title,
+        .present__subtitle,
+        .present__time {
+            opacity: 0;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .present__button {
+            opacity: 0;
+        }
+        &:hover {
+            .present__button {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__wrapper {
+        text-align: center;
+    }
+
+    &__button {
+        position: relative;
+        margin-top: 90px;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0,0,0,.2);
+        transition: all $duration;
+        &:hover {
+            background: rgba(0,0,0,.4);
+            .present__play,
+            .present__pause {
+                fill: rgba(255,255,255,1);
+            }
+        }
+        &--dissolve {
+            animation: dissolve $duration +.5s !important;
+        }
+    }
+
+    &__play,
+    &__pause {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 80px;
+        width: 80px;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%);
+        fill: rgba(255,255,255,.7);
+        transition: all $duration;
+        &--show {
+            opacity: 1;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-top: 37px;
+        font-family: $font-primary-bold;
+        font-size: 28px;
+        font-weight: normal;
+        color: $text-secondary-color;
+        transition: opacity $duration;
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-top: 15px;
+        font-family: $font-primary-medium;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.7em;
+        letter-spacing: .5px;
+        color: $text-secondary-color;
+        transition: opacity $duration;
+        br {
+            display: none;
+        }
+    }
+
+    &__time {
+        display: inline-block;
+        margin-top: 34px;
+        margin-bottom: 82px;
+        font-family: $font-primary-bold;
+        font-size: 14px;
+        letter-spacing: .5px;
+        color: $text-primary-accent;
+        transition: opacity $duration;
+    }
+    
+    &__video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    @include min($screen-sm) {
+        &__title {
+            font-size: 30px;
+        }
+    }
+
+    @include min($screen-lg) {
+        &__button {
+            margin-top: 210px;
+        }
+        &__subtitle {
+            br {
+                display: inline;
+            }
+        }
+        &__time {
+            margin-bottom: 203px;
+        }
+    }
+}
+
+@keyframes dissolve {
+    50% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
