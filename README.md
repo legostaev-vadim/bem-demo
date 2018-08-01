@@ -1,6 +1,6 @@
 # demo
 
-**BEM-COMPS** project
+**bem-comps** demo
 
 # Install
 
